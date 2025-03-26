@@ -1,0 +1,17 @@
+services:
+  pyflink:
+    image: py-flink:latest
+    container_name: py-flink
+    ports:
+      - "8081:8081" 
+    volumes:
+      - ./app:/app
+      - ./flink/config.yaml:/opt/flink/conf/config.yaml
+    environment:
+      JAVA_OPTS: -Dcom.sun.management.jmxremote=false -XX:-UseContainerSupport  # 添加 JAVAOPTS 环境变量
+    command: 
+      - /bin/bash
+      - -c
+      - |
+         /opt/flink/bin/start-cluster.sh && tail -f /dev/null
+  
