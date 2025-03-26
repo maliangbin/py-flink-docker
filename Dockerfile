@@ -9,7 +9,7 @@ WORKDIR /opt
 
 RUN apt-get update && apt-get install -y wget
 
-RUN wget https://www.apache.org/dyn/closer.lua/flink/flink-1.20.1/flink-1.20.1-bin-scala_2.12.tgz
+RUN wget https://dlcdn.apache.org/flink/flink-1.20.1/flink-1.20.1-bin-scala_2.12.tgz
 
 RUN tar -zxvf flink-1.20.1-bin-scala_2.12.tgz \
     && rm -rf flink-1.20.1-bin-scala_2.12.tgz \
