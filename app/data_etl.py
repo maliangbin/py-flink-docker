@@ -48,7 +48,6 @@ if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(message)s")
 
     env = StreamExecutionEnvironment.get_execution_environment()
-    env.add_jars("file:///opt/flink/lib/flink-connector-kafka-3.4.0-1.20.jar")
 
     print("start writing data to kafka")
     write_to_kafka(env)
